@@ -1,0 +1,3 @@
+nombreUsuario: Phokas
+correo: mvossesmeza@gmail.com
+contraseña: soyeladmin

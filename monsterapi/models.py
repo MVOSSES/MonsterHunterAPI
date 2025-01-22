@@ -7,7 +7,7 @@ class Clase(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ''
     
 #Modelo elementos
 #Se usará para definir tanto el elemento como las debilidades del monstruo
@@ -16,24 +16,25 @@ class Elemento(models.Model):
     icono = models.URLField(max_length=1000, blank=True, null=True)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ''
     
 #modelo estados+
 class Estado(models.Model):
     nombre = models.CharField(max_length=50)
     icono = models.URLField(max_length=1000, blank=True, null=True)
 
-    def __str__(self):
-        return self.nombre
+    def __str__(self) -> str:
+        return self.nombre + ''
 
 #modelo Generacion (a que generación pertenece el monstruo)
 class Generacion(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ''
     
-#To Do: si se desea posteriormente, agregar modelo "Juegos" para hacer referencia a los juegos en los cuales cada monstruo aparece
+#To Do: si se desea posteriormente, agregar modelo "Juegos" 
+# para hacer referencia a los juegos en los cuales cada monstruo aparece
 
 #Modelo Principal "Monstruo"
 class Monstruo(models.Model):
@@ -63,4 +64,4 @@ class Monstruo(models.Model):
             raise ValidationError({'El campo min_size no puede ser menor que el campo max_size'})
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ''
