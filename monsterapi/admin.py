@@ -32,7 +32,7 @@ admin.site.register(Generacion, GeneracionAdmin)"""
 
 #Modelo Monstruo 
 class MonstruoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'icono', 'max_size', 'min_size', 'clase', )
+    list_display = ('nombre', 'icono', 'imagen', 'clase',  'max_size', 'min_size',)
 
     filter_horizontal = ('elemento', 'estado', 'debilidad',)
 

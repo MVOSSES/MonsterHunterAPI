@@ -40,6 +40,7 @@ class Generacion(models.Model):
 class Monstruo(models.Model):
     nombre = models.CharField(max_length=50)
     icono = models.URLField(max_length=1000, blank=True, null=True)
+    imagen = models.URLField(max_length=1000, blank=True, null=True)
     #apodos = models.Model(max_length=)
     clase = models.ForeignKey(Clase, on_delete=models.CASCADE, default=None)
     elemento = models.ManyToManyField(Elemento, related_name="elemento_monstruo")
