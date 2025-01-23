@@ -23,6 +23,7 @@ class EstadoSerializer(serializers.ModelSerializer):
 
 #Clase serializador para el modelo Monstruo
 class MonstruoSerializer(serializers.ModelSerializer):
+    #Agregamos los nuevos serializadores para que el archivo JSON de monstruo muestre todos los datos de los elementos referenciados y no solo el id
     clase = ClaseSerializer()
     elemento = ElementoSerializer(many=True)
     estado = EstadoSerializer(many=True)

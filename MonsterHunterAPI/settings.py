@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'monsterapi',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +52,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#si se desea permitir acceso a la api desde cualquier dominio (recomendado solo en desarrollo)
+CORS_ALLOW_ALL_ORIGINS = True  
+
+"""para permitir acceso a la api solo desde dominios predefinidos usar
+CORS_ALLOWED_ORIGINS = [
+    "https://miweb.com",
+    "https://miapp.com",
+]
+"""
 
 ROOT_URLCONF = 'MonsterHunterAPI.urls'
 

@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from monsterapi.views import monstruos_list, monstruo_detail, monstruo_por_nombre
+from monsterapi.views import clases_list, clases_detail, clase_por_nombre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('monstruosAPI/', monstruos_list, name='monstruosAPI'),
-    path('monstruosAPI/<int:pk>/', monstruo_detail, name='monstruoAPI'),
-    path('monstruosAPI/<str:nombre>/',monstruo_por_nombre, name='MonstruoAPI'),
+    path('monstruosDATA/', monstruos_list, name='monstruosDATA'),
+    path('monstruosDATA/<int:pk>/', monstruo_detail, name='monstruosDATA'),
+    path('monstruosDATA/<str:nombre>/',monstruo_por_nombre, name='monstruosDATA'),
+    path('clasesDATA/',clases_list, name='clasesDATA'),
+    path('clasesDATA/<int:pk>/',clases_detail,name='clasesDATA'),
+    path('clasesDATA/<str:nombre>/',clase_por_nombre,name='clasesDATA'),
 ]
