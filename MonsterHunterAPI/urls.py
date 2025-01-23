@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from monsterapi.views import monstruos_list, monstruo_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('monstruosAPI/', monstruos_list, name='monstruosAPI'),
+    path('monstruosAPI/<int:pk>/', monstruo_detail, name='monstruoAPI'),
 ]

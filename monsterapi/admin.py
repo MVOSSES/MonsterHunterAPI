@@ -23,16 +23,17 @@ class EstadoAdmin(admin.ModelAdmin):
 
 admin.site.register(Estado, EstadoAdmin)
 
-#Modelo Generación
+""" Se eliminó el modelo generación ya que no se utilizará
+
 class GeneracionAdmin(admin.ModelAdmin):
     list_display = ('nombre',)
 
-admin.site.register(Generacion, GeneracionAdmin)
+admin.site.register(Generacion, GeneracionAdmin)"""
 
 #Modelo Monstruo 
 class MonstruoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'icono', 'max_size', 'min_size', 'generacion',)
+    list_display = ('nombre', 'icono', 'max_size', 'min_size', 'clase', )
 
-    filter_horizontal = ('clase', 'elemento', 'estado', 'debilidad',)
+    filter_horizontal = ('elemento', 'estado', 'debilidad',)
 
 admin.site.register(Monstruo, MonstruoAdmin)

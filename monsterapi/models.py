@@ -41,13 +41,13 @@ class Monstruo(models.Model):
     nombre = models.CharField(max_length=50)
     icono = models.URLField(max_length=1000, blank=True, null=True)
     #apodos = models.Model(max_length=)
-    clase = models.ManyToManyField(Clase, related_name= "clase_monstruo")
+    clase = models.ForeignKey(Clase, on_delete=models.CASCADE, default=None)
     elemento = models.ManyToManyField(Elemento, related_name="elemento_monstruo")
     estado = models.ManyToManyField(Estado, related_name="estados_aplicados")
     debilidad = models.ManyToManyField(Elemento, related_name= "debilidad_monstruo")
-    max_size = models.IntegerField(blank=False, null=False)
-    min_size = models.IntegerField(blank=False, null=False)
-    generacion = models.ForeignKey(Generacion, on_delete=models.CASCADE)
+    max_size = models.FloatField(blank=False, null=False)
+    min_size = models.FloatField(blank=False, null=False)
+#   generacion = models.ForeignKey(Generacion, on_delete=models.CASCADE)
 #   is_hidden = models.BooleanField(default=False, verbose_name='¿Está oculto?', help_text='El monstruo no se mostrará', null=False)
 
     #Validación para que tamaño maximo sea siempre mayor a tamaño minimo
