@@ -31,7 +31,7 @@ def monstruo_detail(request, pk):
         serializer = MonstruoSerializer(monstruo)
         return Response(serializer.data)
     
-#Experimento api buscar elemento por el nombre
+#Experimento api buscar elemento por el nombre / Exitoso
 @api_view(['GET'])
 def monstruo_por_nombre(request, nombre):
     try:
@@ -42,3 +42,5 @@ def monstruo_por_nombre(request, nombre):
     if request.method == 'GET':
         serializer = MonstruoSerializer(monstruo)
         return Response(serializer.data)                        
+    
+#
