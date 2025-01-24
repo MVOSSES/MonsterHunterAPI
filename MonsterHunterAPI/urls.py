@@ -21,10 +21,10 @@ from monsterapi.views import clases_list, clases_detail, clase_por_nombre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('monstruosDATA/', monstruos_list, name='monstruosDATA'),
-    path('monstruosDATA/<int:pk>/', monstruo_detail, name='monstruosDATA'),
-    path('monstruosDATA/<str:nombre>/',monstruo_por_nombre, name='monstruosDATA'),
-    path('clasesDATA/',clases_list, name='clasesDATA'),
-    path('clasesDATA/<int:pk>/',clases_detail,name='clasesDATA'),
-    path('clasesDATA/<str:nombre>/',clase_por_nombre,name='clasesDATA'),
+    path('mhapi/monstruos/', monstruos_list, name='monstruos'),
+    path('mhapi/monstruos/<int:pk>/', monstruo_detail, name='monstruos'),
+    path('mhapi/monstruos/<str:nombre>/',monstruo_por_nombre, name='monstruos'),
+    path('mhapi/clases/',clases_list, name='clases'),
+    path('mhapi/clases/<int:pk>/',clases_detail,name='clases'),
+    path('mhapi/clases/<str:nombre>/',clase_por_nombre,name='clases'),
 ]
