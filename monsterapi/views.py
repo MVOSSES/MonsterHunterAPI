@@ -3,8 +3,8 @@ from django.http import HttpResponseRedirect
 from django.urls import  reverse
 
 #importaciones para la api
-from monsterapi.models import Monstruo, Clase
-from monsterapi.serializers import MonstruoSerializer, ClaseSerializer
+from monsterapi.models import Monstruo, Clase, Elemento, Estado
+from monsterapi.serializers import MonstruoSerializer, ClaseSerializer, ElementoSerializer, EstadoSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -95,11 +95,75 @@ Views Elementos
 Este apartado contiene las api_views para solicitar los datos de las Elementos
 """
 
+#View todos los elementos
+@api_view(['Get'])
+def elementos_list(request):
+    if request.method == 'GET':
+        elementos = Elemento.objects.all()
+        serializer = ElementoSerializer(elementos, many=True)
+        return Response(serializer.data)
+    
+#View buscar Elementos por ID
+@api_view(['GET'])
+def elementos_detail(request, pk):
+    try:
+        elementos = Elemento.objects.get(pk=pk)
+    except Elemento.DoesNotExist:
+        return Response({"error": "Elemento no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = ElementoSerializer(elementos)
+        return Response(serializer.data)
+
+#View buscar por nombre
+@api_view(['GET'])
+def elementos_por_nombre(request, nombre):
+    try:
+        elementos = Elemento.objects.get(nombre=nombre)
+    except Elemento.DoesNotExist:
+        return Response({"error": "Elemento no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = ElementoSerializer(elementos)
+        return Response(serializer.data)
+    
 #Fin views Elementos
 
 """
 Views Estados 
 Este apartado contiene las api_views para solicitar los datos de las Estados
 """
+
+#View todos los Estados
+@api_view(['GET'])
+def estados_list(request):
+    if request.method == 'GET':
+        estados = Estado.objects.all()
+        serializer = EstadoSerializer(estados, many=True)
+        return Response(serializer.data)
+    
+#View buscar Estado por nombre
+@api_view(['GET'])
+def estados_detail(request, pk):
+    try:
+        estados = Estado.objects.get(pk=pk)
+    except Estado.DoesNotExist:
+        return Response({'error': 'Estado no encontrado'}, status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        serializer = EstadoSerializer(estados)
+        return Response(serializer.data)
+    
+#View buscar Estado por nombre
+@api_view(['GET'])
+def estados_por_nombre(request, nombre):
+    try:
+        estados = Estado.objects.get(nombre=nombre)
+    except Estado.DoesNotExist:
+        return Response({'error':'Estado no encontrado'}, status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        serializer = EstadoSerializer(estados)
+        return Response(serializer.data)
 
 #Fin views Estados

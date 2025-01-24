@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from monsterapi.views import monstruos_list, monstruo_detail, monstruo_por_nombre
 from monsterapi.views import clases_list, clases_detail, clase_por_nombre
+from monsterapi.views import elementos_list, elementos_detail, elementos_por_nombre
+from monsterapi.views import estados_list, estados_detail, estados_por_nombre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,10 @@ urlpatterns = [
     path('mhapi/clases/',clases_list, name='clases'),
     path('mhapi/clases/<int:pk>/',clases_detail,name='clases'),
     path('mhapi/clases/<str:nombre>/',clase_por_nombre,name='clases'),
+    path('mhapi/elementos/', elementos_list, name='elementos'),
+    path('mhapi/elementos/<int:pk>/', elementos_detail, name='elementos'),
+    path('mhapi/elementos/<str:nombre>/', elementos_por_nombre, name='elementos'),
+    path('mhapi/estados/', estados_list, name='estados'),
+    path('mhapi/estados/<int:pk>/', estados_detail, name= 'estados'),
+    path('mhapi/estados/<str:nombre>/', estados_por_nombre, name='estados'),
 ]
