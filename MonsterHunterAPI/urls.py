@@ -19,10 +19,12 @@ from django.urls import path
 from monsterapi.views import monstruos_list, monstruo_detail, monstruo_por_nombre
 from monsterapi.views import clases_list, clases_detail, clase_por_nombre
 from monsterapi.views import elementos_list, elementos_detail, elementos_por_nombre
-from monsterapi.views import estados_list, estados_detail, estados_por_nombre
+from monsterapi.views import estados_list, estados_detail, estados_por_nombre, ver_todo
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('mhapi/', ver_todo, name='mhapi'),
     path('mhapi/monstruos/', monstruos_list, name='monstruos'),
     path('mhapi/monstruos/<int:pk>/', monstruo_detail, name='monstruos'),
     path('mhapi/monstruos/<str:nombre>/',monstruo_por_nombre, name='monstruos'),
@@ -35,4 +37,7 @@ urlpatterns = [
     path('mhapi/estados/', estados_list, name='estados'),
     path('mhapi/estados/<int:pk>/', estados_detail, name= 'estados'),
     path('mhapi/estados/<str:nombre>/', estados_por_nombre, name='estados'),
+    path('',TemplateView.as_view(template_name="index.html"),name="index"),
+    path('docs/',TemplateView.as_view(template_name="monsterapi/docs.html"),name="docs"),
+    path('about/',TemplateView.as_view(template_name="monsterapi/about.html"),name="about"),
 ]

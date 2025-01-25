@@ -5,6 +5,7 @@ from django.urls import  reverse
 #importaciones para la api
 from monsterapi.models import Monstruo, Clase, Elemento, Estado
 from monsterapi.serializers import MonstruoSerializer, ClaseSerializer, ElementoSerializer, EstadoSerializer
+from monsterapi.serializers import MonstruoSerializer2, ClaseSerializer2, ElementoSerializer2, EstadoSerializer2
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -32,7 +33,7 @@ def monstruo_detail(request, pk):
     try:
         monstruo = Monstruo.objects.get(pk=pk)
     except Monstruo.DoesNotExist:
-        return Response({"error": "Monstruo no encontrada"},status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "Monstruo no encontrado"},status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'GET':
         serializer = MonstruoSerializer(monstruo)
@@ -44,7 +45,7 @@ def monstruo_por_nombre(request, nombre):
     try:
         monstruo = Monstruo.objects.get(nombre=nombre)
     except Monstruo.DoesNotExist:
-        return Response({"error": "Monstruo no encontrada"},status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "Monstruo no encontrado"},status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'GET':
         serializer = MonstruoSerializer(monstruo)
@@ -109,7 +110,7 @@ def elementos_detail(request, pk):
     try:
         elementos = Elemento.objects.get(pk=pk)
     except Elemento.DoesNotExist:
-        return Response({"error": "Elemento no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "Elemento no encontrado"}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = ElementoSerializer(elementos)
@@ -167,3 +168,39 @@ def estados_por_nombre(request, nombre):
         return Response(serializer.data)
 
 #Fin views Estados
+
+#Mostrar todos los datos
+@api_view(['GET'])
+def ver_todo(request):
+    if request.method == 'GET':
+        #Obtenemos todos los datos de los modelos y los serializamos
+        monstruos = Monstruo.objects.all()
+        clases = Clase.objects.all()
+        elementos = Elemento.objects.all()
+        estados = Estado.objects.all()
+
+        monstruos_serializer = MonstruoSerializer2(monstruos, many=True)
+        clases_serializer = ClaseSerializer2(clases, many=True)
+        elementos_serializer = ElementoSerializer2(elementos, many=True)
+        estados_serializer = EstadoSerializer2(estados, many=True)
+
+        data = {
+            'monstruos': {
+                'total': monstruos.count(),
+                'items': monstruos_serializer.data
+            },
+            'clases': {
+                'total': clases.count(),
+                'items': clases_serializer.data
+            },
+            'elementos': {
+                'total': elementos.count(),
+                'items': elementos_serializer.data
+            },
+            'estados': {
+                'total': estados.count(),
+                'items': estados_serializer.data
+            }
+        }
+
+        return Response(data)

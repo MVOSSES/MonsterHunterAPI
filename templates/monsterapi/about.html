@@ -1,0 +1,58 @@
+{%extends "base/base.html"%}
+{% load static %}
+
+{% block title %}Acerca de{% endblock %}
+
+{% block content %}
+
+<div class="container py-3">
+    <h1 class="textoTitulo">Acerca de Monster Hunter API</h1>
+    <div class="container justify-content-center" id="queEs">
+        <p class="textoSubtitulo">¿Qué es Monster Hunter API?</p>
+        <p class="textoContent">Monster Hunter API es una API REST diseñada para proporcionar información estructurada sobre los monstruos del universo de Monster Hunter. Con esta herramienta, los desarrolladores y entusiastas de la saga pueden acceder a datos detallados de cada criatura, incluyendo su nombre, hábitat, debilidades y otros atributos relevantes. <br> <br>
+
+            Esta API está pensada para facilitar la integración de información en aplicaciones, páginas web o proyectos relacionados con Monster Hunter, permitiendo consumir los datos en formato JSON de manera sencilla y eficiente. <br> <br>
+            
+            El proyecto ha sido desarrollado con Django y Django REST Framework, ofreciendo un backend robusto y escalable. Además, la API está documentada para que cualquier usuario pueda entender fácilmente cómo realizar consultas y aprovechar al máximo sus funcionalidades. <br> <br>
+            
+            Si eres un fanático de Monster Hunter o un desarrollador en busca de una base de datos estructurada sobre los monstruos del juego, ¡esta API es para ti!</p>
+    </div>
+    <div class="container justify-content-center" id="apiRest">
+        <p class="textoSubtitulo">¿Qué son las APIs REST?</p>
+        <p class="textoContent">Las APIs REST (Representational State Transfer) son interfaces que permiten la comunicación entre sistemas a través de internet utilizando el protocolo HTTP. Funcionan mediante operaciones estándar como GET, POST, PUT y DELETE, y generalmente envían respuestas en formato JSON.<br> <br>
+
+            Cada elemento accesible en la API se trata como un recurso con una URL única (/monstruos/1 para obtener el monstruo con ID 1). Además, son stateless, lo que significa que cada solicitud es independiente y no mantiene información de sesiones previas. <br> <br>
+            
+            Las APIs REST devuelven códigos de estado HTTP para indicar el resultado de la solicitud (200 OK, 404 Not Found, 500 Internal Server Error, etc.). Son ampliamente utilizadas en aplicaciones web, móviles y servicios en línea debido a su eficiencia y escalabilidad. </p>
+    </div>
+    <div class="container justify-content-center" id="contenidoAPI">
+        <p class="textoSubtitulo">¿Qué información ofrece Monster Hunter API?</p>
+        <p class="textoContent">
+            Monster Hunter API te brinda acceso a una base de datos completa sobre los monstruos de Monster Hunter Portable 3rd, permitiéndote obtener información clave de manera estructurada y accesible. <br> <br>
+
+Los datos que proporcionamos incluyen: <br><br>
+
+<i class="bi bi-arrow-return-right"></i>Identificación y clasificación: Nombre del monstruo junto con su especie o clase. <br><br>
+<i class="bi bi-arrow-return-right"></i>Imágenes representativas: Ilustraciones o capturas del monstruo para su reconocimiento visual. <br><br>
+<i class="bi bi-arrow-return-right"></i>Elementos: Tipos de elementos que el monstruo puede utilizar en combate, incluyendo su nombre e ícono. <br><br>
+<i class="bi bi-arrow-return-right"></i>Estados alterados: Estados negativos que el monstruo puede infligir, junto con sus respectivos íconos. <br><br>
+<i class="bi bi-arrow-return-right"></i>Debilidades: Información sobre los elementos a los que cada monstruo es más vulnerable. <br><br>
+Tamaño máximo y mínimo: Registros de las dimensiones más grandes y pequeñas observadas para cada criatura. <br><br>
+Actualmente, nuestra API se centra exclusivamente en los monstruos de Monster Hunter Portable 3rd, pero en el futuro podríamos expandir la base de datos para incluir otras entregas de la saga. <br> <br>
+
+Todos los datos han sido obtenidos de la <a target="_blank" class="enlaceExterno" href="https://monsterhunter.fandom.com/wiki/Monster_Hunter_Wiki">Wiki de Monster Hunter</a>Wiki de Monster Hunter, garantizando que la información proporcionada sea precisa y confiable. <br> <br>
+        </p>
+
+    <div class="container justify-content-center" id="propositoAPI">
+        <p class="textoSubtitulo">El propósito detrás de Monster Hunter API</p>
+        <p class="textoContent">Soy Analista Programador con un fuerte interés en el desarrollo backend, y Monster Hunter API es un proyecto que desarrollé con el propósito de demostrar mis habilidades en <a target="_blank" class="enlaceExterno" href="https://www.python.org">Python</a>, <a target="_blank" class="enlaceExterno" href="https://www.djangoproject.com">Django</a> y <a target="_blank" class="enlaceExterno" href="https://www.django-rest-framework.org">Django REST Framework</a>. Esta API forma parte de mi portafolio personal y representa un desafío técnico que me permitió profundizar en el diseño y desarrollo de servicios web. <br> <br>
+
+            Además de ser un proyecto demostrativo, Monster Hunter API también fue creada con la intención de practicar el consumo de datos de una API. Por ello, decidí mantener su alcance contenido, enfocándome en una cantidad de información bien estructurada en lugar de abarcar un volumen demasiado extenso que pudiera hacer más engorrosa su utilización.<br> <br>
+            
+            La temática de la API surge de mi afición por la saga Monster Hunter, una de mis favoritas en el mundo de los videojuegos. Inspirado en su vasto universo de criaturas y mecánicas, decidí estructurar esta API en torno a los monstruos de la entrega Monster Hunter Portable 3rd, proporcionando información detallada sobre ellos.<br> <br>
+            
+            A futuro, mi intención es aprovechar Monster Hunter API en un nuevo proyecto donde los datos que proporciona sean utilizados de manera más interactiva, ampliando así su utilidad más allá de la documentación y el aprendizaje.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,159 @@
+{%extends "base/base.html"%}
+{% load static %}
+{% block title %}Pagina principal{% endblock %}
+
+{% block content %}
+
+<!-- Cabecera de página -->
+<!-- Sección con imagen a la izquierda y texto a la derecha -->
+<section class="cabecera text-center py-3">
+    <div class="container">
+        <div class="seccion-flex">
+            <img src="{% static 'img/mhapiLogo2.png' %}" alt="Imagen descriptiva" class="imagen-lateral">
+            <div class="texto-derecha">
+                <h1 class="display-4">
+                    <i class="bi bi-restaurant"></i> Monster Hunter API
+                </h1>
+                <p class="lead">
+                    <i class="bi bi-info-square"></i>
+                    API REST no oficial de Monster Hunter
+                </p>
+                <p class="lead">
+                    <i class="bi bi-book"></i>
+                    Obten acceso rápido a los datos de los Monstruos, Clases, Elementos y Estados
+                </p>
+                <a href="#pruebaAPI" class="btn botones1">
+                    <i class="bi bi-terminal-fill"></i> Prueba la API
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Sección servicios -->
+<section class="services-section align-items-center py-3" id="nservicios">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="container contenedor1">
+                        <h2 class="text-center">
+                            <i class="bi bi-search"></i> Acerca de
+                        </h2>
+                        <p class="text-center">
+                            <i class="bi bi-book-half"></i></i>Conoce que es Monster Hunter API
+                        </p>
+                        <p class="text-center">
+                            Toda la información sobre qué es Monster Hunter API y su finalidad.
+                        </p>
+                        <div class="text-center">
+                            <a href="{% url 'about' %}" class="btn botones1">
+                                <i class="bi bi-box-arrow-right"></i> Ir a Acerca de
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="container contenedor1">
+                        <h2 class="text-center">
+                            <i class="bi bi-file-earmark-text-fill"></i> Docs
+                        </h2>
+                        <p class="text-center">
+                            <i class="bi bi-eyeglasses"></i> ¿Quieres usar la API?
+                        </p>
+                        <p class="text-center">
+                            Accede a la Documentación donde te informamos de como funciona y como consumir la API
+                        </p>
+                        <div class="text-center">
+                            <a href="{% url 'docs' %}" class="btn botones1">
+                                <i class="bi bi-person-fill-lock"></i> Ir a Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="container contenedor1">
+                        <h2 class="text-center">
+                            <i class="bi bi-cloud-arrow-down"></i> API RESTful
+                        </h2>
+                        <p class="text-center">
+                            <i class="bi bi-hammer"></i> Accede a la API pública de Monstruos
+                        </p>
+                        <p class="text-center">
+                            Accede a los datos desde tu propio proyecto
+                        </p>
+                        <div class="text-center">
+                            <a target="_blank" href="{% url 'mhapi' %}" class="btn botones1">
+                                <i class="bi bi-box-arrow-up-right"></i> Ir a API
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Prueba la api -->
+<div class="container py-3" id="pruebaAPI">
+    <div class="row g-2 justify-content-center">
+        <div class="text-center">
+            <h2>
+                <i class="bi bi-terminal"></i>
+                Prueba la api
+            </h2>
+        </div>
+        <div class="text-center">
+            <p>
+                <i class="bi bi-list-ol text-color3"></i>
+                Completa la url con el endpoint deseado. <br>
+                indice: <br>
+                <i class="bi bi-arrow-return-right"></i>Información de Monstruos: mhapi/monstruos/Diablos/ <br>
+                <i class="bi bi-arrow-return-right"></i>Información de Elementos: mhapi/elementos/Draco/ <br>
+                <i class="bi bi-arrow-return-right"></i>Información de Estados: mhapi/estados/sueño/ <br>
+                <i class="bi bi-arrow-return-right"></i>Información de Clases: mhapi/clases/Dragon Anciano/ <br>
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <section class="col-md-6 col-lg-4 services-section align-items-center py-1">
+                <div class="input-group">
+                    <span class="input-group-text cuadroInput">/mhapi/</span>
+                    <input type="text" id="endpoint" class="form-control text-color3 cuadroInput" placeholder="monstruos/Arzuros/">
+                    <button class="btn botones1" onclick="testAPI()">Submit</button>
+                </div>
+                <p>*Puedes dejar el campo vacío para obtener la información de toda la información. <br> La búsqueda se puede realizar tanto por id como por Nombre <br> (consultar Indice en apartado Docs)</p>
+            </section>
+        </div>
+
+        <h3 class="text-center">Response:</h3>
+        <div class="d-flex justify-content-center">
+            <pre id="response"></pre>
+        </div>
+    </div>
+</div>
+    <!---- Script para consumir la api e interpretar los resultados-->
+    <script>
+        function testAPI() {
+            const endpoint = document.getElementById("endpoint").value;
+            const baseURL = "http://127.0.0.1:8000/mhapi/";
+            const url = baseURL + endpoint;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("response").textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById("response").textContent = "Error: " + error;
+                });
+        }
+    </script>
+
+<!-- Fin sección prueba la api-->
+
+{% endblock %}

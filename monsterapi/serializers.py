@@ -38,3 +38,23 @@ class MonstruoSerializer(serializers.ModelSerializer):
         en caso de que la api cuente con otros metodos como POST, PUT O DELETE la validación se debe
         realizar obligatoriamente para que coincida con las validaciones establecidas en el modelo original"""
         
+
+#Serializers ver 2
+class ClaseSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Clase
+        fields = ['id','nombre',]
+class ElementoSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Elemento
+        fields = ['id', 'nombre',]
+
+class EstadoSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Estado
+        fields = ['id', 'nombre',]
+
+class MonstruoSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Monstruo
+        fields = ['id', 'nombre',]

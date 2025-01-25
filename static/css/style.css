@@ -1,0 +1,156 @@
+.color1 {
+    background-color: #b07131;
+    color: #b07131;
+    border-color: #b07131;
+}
+.color2 {
+    background-color: #f5ce83;
+    color: #f5ce83;
+    border-color: #f5ce83;
+}
+.color3 {
+    background-color: #1c0704;
+    color: #1c0704;
+    border-color: #1c0704;
+}
+.color4 {
+    background-color: #b38753;
+    color: #b38753;
+    border-color: #b38753;
+}
+.color5 {
+    background-color: #cbbc96;
+    color: #cbbc96;
+    border-color: #cbbc96;
+}
+.color6 { 
+    background-color: #af8a58;
+    color: #af8a58;
+    border-color: #af8a58;
+}
+.color7 { 
+    background-color: #e2cc99;
+    color: #e2cc99;
+    border-color: #e2cc99;    
+}
+.color8 { 
+    background-color: #644020;
+    color: #644020;
+    border-color: #644020;    
+}
+.color9 { 
+    background-color: #a0835a;
+    color: #a0835a;
+    border-color: #a0835a;
+}
+.color0 { 
+    background-color: #d4cca0;
+    color: #d4cca0;
+    border-color: #d4cca0;
+}
+.cabecera{
+    background-color: #644020;
+    color: #d4cca0;
+    border-color: #b38753;
+}
+body{
+    background-color: #d4cca0;
+    color: #1c0704;
+}
+.logoTitulo{
+    width: auto;
+    height: 30px;
+}
+.botones1{
+    background-color: #1c0704;
+    color: #d4cca0;
+    border-color: #a0835a;
+    cursor: pointer;
+    &:hover{
+        background-color: #b38753;
+        color: #1c0704;
+        border-color: #1c0704;
+    }
+}
+.textoNavBar{
+    color: #1c0704;
+    font-size: 90%;
+    padding : 10px;
+    font-weight: 500;
+}
+.textoNavBar2{
+    color: #1c0704;
+    font-size: 70%;
+    padding : 10px;
+    font-weight: 500;
+}
+/* Contenedor flexible para imagen-texto-imagen */
+.seccion-flex {
+    display: flex;
+    align-items: center;  /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Imágenes a los lados */
+.imagen-lateral {
+    width: 25%; /* Ajusta el tamaño de las imágenes */
+    max-width: 250px;
+    border-radius: 10px;
+    margin: 0 20px; /* Espacio entre imágenes y texto */
+}
+
+/* Contenedor del texto */
+.texto-centro {
+    flex: 1; /* Ocupa el espacio restante */
+}
+#response {
+    background-color: #b38753; /* Color de fondo */
+    border: 3px solid #1c0704;
+    color: #1c0704; /* Borde para que destaque */
+    padding: 15px;
+    width: 100%; /* Abarca todo el ancho disponible */
+    max-width: 600px; /* Tamaño máximo */
+    height: 300px; /* Altura fija */
+    overflow: auto; /* Activa las barras de desplazamiento cuando sea necesario */
+    white-space: pre-wrap; /* Mantiene el formato JSON */
+    text-align: left; /* Asegura que el texto JSON se vea correctamente */
+    font-family: monospace; /* Fuente tipo código */
+    margin: 0 auto; /* Centrar el cuadro */
+    margin-bottom: 10px;
+}
+
+.cuadroInput{
+    background-color: #b38753;
+    color: #1c0704;
+    border-color: #1c0704;
+}
+
+.contenedor1{
+    background-color: #b38753;
+    color: #1c0704;
+    border-color: #1c0704;
+    padding: 20px;
+    border: 3px solid #1c0704;
+    border-radius: 5px;
+}
+.textoTitulo{
+    font-size: 25px;
+    font-weight: 900;
+}
+.textoSubtitulo{
+    font-size: 150%;
+    font-weight: 700;
+    padding-left: 7%;
+}
+.textoContent{
+    font-size: 100%;
+    font-weight: 400;
+    padding-left: 20%;
+    text-align: justify;
+}
+.enlaceExterno{
+    font-weight: 750;
+}
