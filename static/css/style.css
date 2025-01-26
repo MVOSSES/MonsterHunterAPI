@@ -154,3 +154,9 @@ body{
 .enlaceExterno{
     font-weight: 750;
 }
+.contentSubtitulo{
+    font-size: 100%;
+    font-weight: 550;
+    padding-left: 14%;
+    text-align: justify;
+}
