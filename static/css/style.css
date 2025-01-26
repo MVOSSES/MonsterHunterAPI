@@ -1,52 +1,20 @@
-.color1 {
-    background-color: #b07131;
+.paletaDeColores{ /* Solo para referencia*/
     color: #b07131;
-    border-color: #b07131;
-}
-.color2 {
-    background-color: #f5ce83;
     color: #f5ce83;
-    border-color: #f5ce83;
-}
-.color3 {
-    background-color: #1c0704;
     color: #1c0704;
-    border-color: #1c0704;
-}
-.color4 {
-    background-color: #b38753;
     color: #b38753;
-    border-color: #b38753;
-}
-.color5 {
-    background-color: #cbbc96;
     color: #cbbc96;
-    border-color: #cbbc96;
-}
-.color6 { 
-    background-color: #af8a58;
     color: #af8a58;
-    border-color: #af8a58;
-}
-.color7 { 
-    background-color: #e2cc99;
     color: #e2cc99;
-    border-color: #e2cc99;    
-}
-.color8 { 
-    background-color: #644020;
     color: #644020;
-    border-color: #644020;    
-}
-.color9 { 
-    background-color: #a0835a;
     color: #a0835a;
-    border-color: #a0835a;
-}
-.color0 { 
-    background-color: #d4cca0;
     color: #d4cca0;
-    border-color: #d4cca0;
+}
+#barraNav{
+    background-color: #b38753;
+}
+#piePagina{
+    background-color: #af8a58;
 }
 .cabecera{
     background-color: #644020;
@@ -84,41 +52,57 @@ body{
     padding : 10px;
     font-weight: 500;
 }
-/* Contenedor flexible para imagen-texto-imagen */
 .seccion-flex {
     display: flex;
-    align-items: center;  /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;  
+    justify-content: center;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* Imágenes a los lados */
+
 .imagen-lateral {
-    width: 25%; /* Ajusta el tamaño de las imágenes */
+    width: 25%; 
     max-width: 250px;
     border-radius: 10px;
-    margin: 0 20px; /* Espacio entre imágenes y texto */
+    margin: 0 20px; 
 }
 
-/* Contenedor del texto */
+
 .texto-centro {
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1; 
 }
 #response {
-    background-color: #b38753; /* Color de fondo */
+    background-color: #b38753;
     border: 3px solid #1c0704;
-    color: #1c0704; /* Borde para que destaque */
+    color: #1c0704;
     padding: 15px;
-    width: 100%; /* Abarca todo el ancho disponible */
-    max-width: 600px; /* Tamaño máximo */
-    height: 300px; /* Altura fija */
-    overflow: auto; /* Activa las barras de desplazamiento cuando sea necesario */
-    white-space: pre-wrap; /* Mantiene el formato JSON */
-    text-align: left; /* Asegura que el texto JSON se vea correctamente */
-    font-family: monospace; /* Fuente tipo código */
-    margin: 0 auto; /* Centrar el cuadro */
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    overflow: auto; 
+    white-space: pre-wrap; 
+    text-align: left; 
+    font-family: monospace; 
+    margin: 0 auto; 
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+#response2 {
+    background-color: #b38753; 
+    border: 3px solid #1c0704;
+    color: #1c0704; 
+    padding: 15px;
+    width: auto; 
+    max-width: 600px; 
+    height: auto; 
+    max-height: 400px;
+    overflow: auto; 
+    white-space: pre-wrap; 
+    text-align: left; 
+    font-family: monospace; 
+    margin: 0 auto; 
     margin-bottom: 10px;
 }
 
@@ -126,6 +110,11 @@ body{
     background-color: #b38753;
     color: #1c0704;
     border-color: #1c0704;
+    &:focus{
+        background-color: #b38753;
+        color: #1c0704;
+        border-color: #1c0704;
+    }
 }
 
 .contenedor1{
@@ -135,6 +124,19 @@ body{
     padding: 20px;
     border: 3px solid #1c0704;
     border-radius: 5px;
+    width: 300;
+    height: 270;
+    min-height: 270px; 
+    max-height: 300px;
+}
+.tamañoTarjetaSection{
+    min-height: 250px; 
+    max-height: 300px; 
+    width: 300; 
+    height: 270;
+    display: flex; 
+    flex-direction: column; /* Organiza los elementos de arriba a abajo */
+    justify-content: space-between; 
 }
 .textoTitulo{
     font-size: 25px;
@@ -154,9 +156,27 @@ body{
 .enlaceExterno{
     font-weight: 750;
 }
-.contentSubtitulo{
-    font-size: 100%;
-    font-weight: 550;
+.subtituloContenido{
+    font-size: 120%;
+    font-weight: 600;
     padding-left: 14%;
-    text-align: justify;
+}
+.imagenesContenido{
+    width: auto;
+    height: auto;
+    max-width: 60%; 
+    border: 3px solid #1c0704;
+    border-radius: 10px;
+}
+.tarjetas{
+    display: inline-block; 
+    padding: 0;
+    margin: 0; 
+    padding-left: 20%;
+}
+.contenedor-imagen {
+    display: inline-block; 
+    width: fit-content; 
+    padding: 0; 
+    margin: 0; 
 }

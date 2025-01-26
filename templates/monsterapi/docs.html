@@ -21,45 +21,158 @@
     </div>
     <div class="container">
         <p class="textoSubtitulo">Endpoints Disponibles</p>
-        <p class="contentSubtitulo">Obtener todos los datos</p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Otener todos los datos</p>
         <p class="textoContent">
-            GET /mhapi/
-            Devuelve un objeto con todos los datos de la API, incluyendo monstruos, clases, elementos y estados, cada uno con su cantidad total.
+            GET /mhapi/ <br>
+            <i class="bi bi-arrow-return-right"></i>Devuelve un objeto con todos los datos de la API, incluyendo monstruos, clases, elementos y estados, cada uno con su cantidad total.
+        </p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Monstruos</p>
+        <p class="textoContent">
+            GET /mhapi/clases/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los monstruos. Se pueden agregar parámetros opcionales como clase o elemento para filtrar los resultados. <br>
+            GET /mhapi/monstruos/{id}/ <br>
+            <i class="bi bi-arrow-return-right"></i> Obtiene un monstruo por su ID. <br>
+            GET /mhapi/monstruos/{nombre}/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene un monstruo por su nombre.
+        </p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>clases</p>
+        <p class="textoContent">
+            GET /mhapi/clases/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todas las clases. <br>
+            GET /mhapi/clases/{id}/ <br>
+            <i class="bi bi-arrow-return-right"></i> Obtiene una clase por su ID. <br>
+            GET /mhapi/clases/{nombre}/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene una clase por su nombre.
+        </p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Elementos</p>
+        <p class="textoContent">
+            GET /mhapi/elementos/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los elementos. <br>
+            GET /mhapi/elementos/{id}/ <br>
+            <i class="bi bi-arrow-return-right"></i> Obtiene un elemento por su ID. <br>
+            GET /mhapi/elementos/{nombre}/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene un elemento por su nombre.
+        </p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Estados</p>
+        <p class="textoContent">
+            GET /mhapi/estados/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los estados. <br>
+            GET /mhapi/estados/{id}/ <br>
+            <i class="bi bi-arrow-return-right"></i> Obtiene un estado por su ID. <br>
+            GET /mhapi/estados/{nombre}/ <br>
+            <i class="bi bi-arrow-return-right"></i>Obtiene un estado por su nombre.
+        </p>
+    </div>
+
+    <div class="container">
+        <p class="textoSubtitulo">Formato de respuestas</p>
+        <p class="textoContent">
+            Las respuestas de la API son en formato JSON. En caso de error, la API devuelve un mensaje de error con su código HTTP correspondiente. Por ejemplo: <br>
+            <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>ejemplo de respuesta para el endpoint /mhapi/Arzuros</p>
+            <div id="response2">
+{
+    "id": 4,
+    "nombre": "Arzuros",
+    "icono": "https://static.wikia.nocookie.net/monsterhunterespanol/images/e/ec/MH3U-Icono_Arzuros.png/revision/latest/scale-to-width-down/75?cb=20151219154931&path-prefix=es",
+    "clase": {
+        "id": 3,
+        "nombre": "Bestia de Colmillos"
+    },
+    "elemento": [
+        {
+        "id": 6,
+        "nombre": "Ninguno",
+        "icono": null
+        }
+    ],
+    "estado": [
+        {
+        "id": 19,
+        "nombre": "Ninguno",
+        "icono": null
+        }
+    ],
+    "debilidad": [
+        {
+        "id": 1,
+        "nombre": "Fuego",
+        "icono": "https://static.wikia.nocookie.net/monsterhunterespanol/images/f/f1/Estado-MHW_Plaga_de_Fuego.png/revision/latest/scale-to-width-down/25?cb=20180127211238&path-prefix=es"
+        },
+        {
+        "id": 4,
+        "nombre": "Hielo",
+        "icono": "https://static.wikia.nocookie.net/monsterhunterespanol/images/0/04/Estado-MH4_Plaga_de_Hielo.png/revision/latest/scale-to-width-down/25?cb=20140826101532&path-prefix=es"
+        }
+    ],
+    "max_size": 854.55,
+    "min_size": 501.34
+    }
+            </div>
+            <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Código HTTP: 404 Not Found</p>
+            <div id="response2">
+{
+    "error": "Monstruo no encontrado"
+}
+            </div>
+            <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Código HTTP: 400 Bad Request</p>
+            <div id="response2">
+{
+    "error": "Parámetro inválido"
+}
+            </div>
+        </p>   
+    </div>
+    <div class="container">
+        <p class="textoSubtitulo">Ejemplos de Uso en Código</p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>JavaScript (Fetch API)</p>
+        <div id="response2">
+fetch("https://tuapi.com/mhapi/monstruos/")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error("Error:", error));
+                        </div>
+        <p class="textoContent">
+            <i class="bi bi-arrow-return-right"></i>El código realiza una solicitud GET a https://tuapi.com/mhapi/monstruos/ usando fetch, convierte la respuesta en JSON y la muestra en la consola. Si ocurre un error (como problemas de red), lo captura y lo imprime en la consola.
+        </p>
+        <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Python (Requests)</p>
+        <div id="response2">
+import requests
+
+response = requests.get("https://tuapi.com/mhapi/monstruos/")
+if response.status_code == 200:
+    print(response.json())
+else:
+    print("Error:", response.status_code)
+                        </div>
+        <p class="textoContent">
+            <i class="bi bi-arrow-return-right"></i>Este código en Python realiza una solicitud HTTP GET a una API utilizando el módulo requests. Envía la solicitud a la URL https://tuapi.com/mhapi/monstruos/ y verifica si la respuesta tiene éxito (código 200). Si es exitosa, imprime los datos en formato JSON; de lo contrario, muestra un mensaje con el código de error recibido.
+        </p>
+    </div>
+    <div class="container">
+        <p class="textoSubtitulo">Uso de la Sección "Prueba la API"</p>
+        <p class="textoContent">
+            Para obtener una referencia rápida de los IDs y nombres de los elementos disponibles en la API, se recomienda utilizar la sección Prueba la API, donde se pueden visualizar los datos de manera interactiva.
         </p>
         
     </div>
     <div class="container">
-        <p class="contentSubtitulo"></p>
+        <p class="textoSubtitulo">Consideraciones Finales</p>
         <p class="textoContent">
-            
-        </p>
-        
-    </div>
-    <div class="container">
-        <p class="textoSubtitulo"></p>
-        <p class="textoContent">
-            
-        </p>
-        
-    </div>
-    <div class="container">
-        <p class="textoSubtitulo"></p>
-        <p class="textoContent">
-            
-        </p>
-        
-    </div>
-    <div class="container">
-        <p class="textoSubtitulo"></p>
-        <p class="textoContent">
-            
-        </p>
-        
-    </div>
-    <div class="container">
-        <p class="textoSubtitulo"></p>
-        <p class="textoContent">
-            
+            <i class="bi bi-arrow-return-right"></i>La API está en constante desarrollo y puede recibir nuevas actualizaciones. <br>
+
+            <i class="bi bi-arrow-return-right"></i>Se recomienda usar un cliente como Postman o herramientas similares para probar los endpoints.<br>
+
+            <i class="bi bi-arrow-return-right"></i>Si encuentras errores o deseas contribuir, revisa la documentación oficial o contacta con el administrador del proyecto.<br>
+
+            <i class="bi bi-arrow-return-right"></i>La API es pública y no requiere autenticación para realizar peticiones.<br>
+
+            <i class="bi bi-arrow-return-right"></i>Se ha configurado django-cors-headers para permitir solicitudes desde cualquier origen (CORS), facilitando su uso en aplicaciones web y otros servicios.<br>
+
+            <i class="bi bi-arrow-return-right"></i>La API está en constante desarrollo y puede recibir nuevas actualizaciones.<br>
+
+            <i class="bi bi-arrow-return-right"></i>Se recomienda usar un cliente como Postman o herramientas similares para probar los endpoints.<br>
+
+            <i class="bi bi-arrow-return-right"></i>Si encuentras errores o deseas contribuir, revisa la documentación oficial o contacta con el administrador del proyecto.<br>
         </p>
         
     </div>
