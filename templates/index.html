@@ -113,6 +113,7 @@
                 <i class="bi bi-list-ol text-color3"></i>
                 Completa la url con el endpoint deseado. <br>
                 indice: <br>
+                <i class="bi bi-arrow-return-right"></i>Todos los datos: mhapi/ <br>
                 <i class="bi bi-arrow-return-right"></i>Todos los Monstruos: mhapi/monstruos/ <br>
                 <i class="bi bi-arrow-return-right"></i>Detalle de Monstruo: mhapi/monstruos/Diablos/ <br>
                 <i class="bi bi-arrow-return-right"></i>Todos los Elementos: mhapi/elementos/ <br>
@@ -130,7 +131,7 @@
                     <input type="text" id="endpoint" class="form-control text-color3 cuadroInput" placeholder="monstruos/Arzuros/">
                     <button class="btn botones1" onclick="testAPI()">Enviar</button>
                 </div>
-                <p>*Puedes dejar el campo vacío para obtener toda la información. <br> *La búsqueda se puede realizar tanto por id como por Nombre <br> (consultar Indice en apartado Docs)</p>
+                <p>*La búsqueda se puede realizar tanto por id como por Nombre</p>
             </section>
         </div>
 
@@ -144,7 +145,7 @@
     <script>
         function testAPI() {
             const endpoint = document.getElementById("endpoint").value;
-            const baseURL = "http://127.0.0.1:8000/mhapi/";
+            const baseURL = "https://monsterhunterapi.onrender.com/mhapi/";
             const url = baseURL + endpoint;
 
             fetch(url)
