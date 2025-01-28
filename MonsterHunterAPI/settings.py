@@ -91,7 +91,6 @@ WSGI_APPLICATION = 'MonsterHunterAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 import dj_database_url
-import os
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('postgresql://mhapi_user:2N7slFHFbAWwx9TM0k1zBP0otFT3G3eZ@dpg-cubgpk2n91rc7393fal0-a/mhapi'))
