@@ -31,7 +31,7 @@ class MonstruoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Monstruo
         #en fields agregamos todos los campos que queremos que nuestro serializador procese al convertir nuestro modelo en un objeto JSON
-        fields = ['id', 'nombre', 'icono', 'imagen,' 'clase', 'elemento', 'estado', 'debilidad', 'max_size', 'min_size',]
+        fields = ['id', 'nombre', 'icono', 'imagen,', 'clase', 'elemento', 'estado', 'debilidad', 'max_size', 'min_size',]
 
         """En el serializador volveremos a realizar las validaciones para el tamaño del monstruo.
         para este proyecto el proceso es opcional, ya que la api solo contará con el metodo GET.
