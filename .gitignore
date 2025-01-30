@@ -1,7 +1,7 @@
 # Ignorar archivo .env con las variables de entorno
 .env
 
-# Archivos de base de datos (si usas SQLite)
+# Archivos de base de datos
 db.sqlite3
 
 # Archivos de logs
