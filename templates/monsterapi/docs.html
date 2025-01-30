@@ -29,38 +29,38 @@
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Monstruos</p>
         <p class="textoContent">
-            GET /mhapi/monstruos/ <br>
+            GET ./mhapi/monstruos/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los monstruos. Se pueden agregar parámetros opcionales como clase o elemento para filtrar los resultados. <br>
-            GET /mhapi/monstruos/{id}/ <br>
+            GET ./mhapi/monstruos/{id}/ <br>
             <i class="bi bi-arrow-return-right"></i> Obtiene un monstruo por su ID. <br>
-            GET /mhapi/monstruos/{nombre}/ <br>
+            GET ./mhapi/monstruos/{nombre}/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene un monstruo por su nombre.
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>clases</p>
         <p class="textoContent">
-            GET /mhapi/clases/ <br>
+            GET ./mhapi/clases/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todas las clases. <br>
-            GET /mhapi/clases/{id}/ <br>
+            GET ./mhapi/clases/{id}/ <br>
             <i class="bi bi-arrow-return-right"></i> Obtiene una clase por su ID. <br>
-            GET /mhapi/clases/{nombre}/ <br>
+            GET ./mhapi/clases/{nombre}/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene una clase por su nombre.
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Elementos</p>
         <p class="textoContent">
-            GET /mhapi/elementos/ <br>
+            GET ./mhapi/elementos/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los elementos. <br>
-            GET /mhapi/elementos/{id}/ <br>
+            GET ./mhapi/elementos/{id}/ <br>
             <i class="bi bi-arrow-return-right"></i> Obtiene un elemento por su ID. <br>
-            GET /mhapi/elementos/{nombre}/ <br>
+            GET ./mhapi/elementos/{nombre}/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene un elemento por su nombre.
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Estados</p>
         <p class="textoContent">
-            GET /mhapi/estados/ <br>
+            GET ./mhapi/estados/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene la lista de todos los estados. <br>
-            GET /mhapi/estados/{id}/ <br>
+            GET ./mhapi/estados/{id}/ <br>
             <i class="bi bi-arrow-return-right"></i> Obtiene un estado por su ID. <br>
-            GET /mhapi/estados/{nombre}/ <br>
+            GET ./mhapi/estados/{nombre}/ <br>
             <i class="bi bi-arrow-return-right"></i>Obtiene un estado por su nombre.
         </p>
     </div>
@@ -164,6 +164,10 @@ else:
     <div class="container">
         <p class="textoSubtitulo">Consideraciones Finales</p>
         <p class="textoContent">
+            <i class="bi bi-arrow-return-right"></i>Monster Hunter API solo responde a solicitudes de tipo GET.<br><br>
+
+            <i class="bi bi-arrow-return-right"></i>Si bien el codigo de Monster Hunter API y su respectivo repositorio son públicos en GitHub, solo se permite su uso para fines educativos y de análisis.<br><br>
+
             <i class="bi bi-arrow-return-right"></i>La API está en constante desarrollo y puede recibir nuevas actualizaciones. <br><br>
 
             <i class="bi bi-arrow-return-right"></i>Se recomienda usar un cliente como Postman, Thunder Client o herramientas similares para probar los endpoints.<br><br>
@@ -172,7 +176,7 @@ else:
 
             <i class="bi bi-arrow-return-right"></i>La API es pública y no requiere autenticación para realizar peticiones.<br><br>
 
-            <i class="bi bi-arrow-return-right"></i>Se ha configurado django-cors-headers para permitir solicitudes desde cualquier origen (CORS), facilitando su uso en aplicaciones web y otros servicios.<br><br>
+            <i class="bi bi-arrow-return-right"></i>Se ha configurado django-cors-headers para permitir solicitudes desde cualquier origen (CORS), facilitando su uso en aplicaciones web y otros servicios.<br>
         </p>   
     </div>
 </div>
