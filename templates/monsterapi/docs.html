@@ -21,10 +21,10 @@
     </div>
     <div class="container">
         <p class="textoSubtitulo">Endpoints Disponibles</p>
-        <p class="textoContent">La url base de la API es https://monsterhunterapi.onrender.com/mhapi/</p>
+        <p class="subtituloContenido">La url base de la API es: <br> https://monsterhunterapi.onrender.com/mhapi/</p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Otener todos los datos</p>
         <p class="textoContent">
-            GET https://monsterhunterapi.onrender.com/mhapi/ <br>
+            GET ./mhapi/ <br>
             <i class="bi bi-arrow-return-right"></i>Devuelve un objeto con todos los Monstruos, Clases, Elementos y Estados, cada uno con la cantidad de registros y una lista de los mismos con su respectivo id y nombre.
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Monstruos</p>
@@ -134,7 +134,7 @@ fetch("https://monsterhunterapi.onrender.com/mhapi/monstruos/")
     .catch(error => console.error("Error:", error));
                         </div>
         <p class="textoContent">
-            <i class="bi bi-arrow-return-right"></i>El código realiza una solicitud GET a https://monsterhunterapi.onrender.com/mhapi/monstruos/ usando fetch, convierte la respuesta en JSON y la muestra en la consola. Si ocurre un error (como problemas de red), lo captura y lo imprime en la consola.
+            <i class="bi bi-arrow-return-right"></i>El código realiza una solicitud GET a ./mhapi/monstruos/ usando fetch, convierte la respuesta en JSON y la muestra en la consola. Si ocurre un error (como problemas de red), lo captura y lo imprime en la consola.
         </p>
         <p class="subtituloContenido"><i class="bi bi-arrow-right"></i>Python (Requests)</p>
         <div id="response2">
@@ -147,7 +147,7 @@ else:
     print("Error:", response.status_code)
                         </div>
         <p class="textoContent">
-            <i class="bi bi-arrow-return-right"></i>Este código en Python realiza una solicitud HTTP GET a una API utilizando el módulo requests. Envía la solicitud a la URL https://monsterhunterapi.onrender.com/mhapi/monstruos/ y verifica si la respuesta tiene éxito (código 200). Si es exitosa, imprime los datos en formato JSON; de lo contrario, muestra un mensaje con el código de error recibido.
+            <i class="bi bi-arrow-return-right"></i>Este código en Python realiza una solicitud HTTP GET a una API utilizando el módulo requests. Envía la solicitud a la URL ./mhapi/monstruos/ y verifica si la respuesta tiene éxito (código 200). Si es exitosa, imprime los datos en formato JSON; de lo contrario, muestra un mensaje con el código de error recibido.
         </p>
     </div>
     <div class="container">
