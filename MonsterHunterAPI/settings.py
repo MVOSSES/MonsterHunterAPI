@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +26,10 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6944y&gw+@51x!kjzo+rqvwwbcw!yr$gl2s9&of6c+=ujuv$7p'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["monsterhunterapi.onrender.com", "localhost", "127.0.0.1"]
 
@@ -93,8 +97,9 @@ WSGI_APPLICATION = 'MonsterHunterAPI.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('postgresql://mhapi_user:2N7slFHFbAWwx9TM0k1zBP0otFT3G3eZ@dpg-cubgpk2n91rc7393fal0-a/mhapi'))
+    'default': env.db()
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

@@ -1,0 +1,13 @@
+# Ignorar archivo .env con las variables de entorno
+.env
+
+# Archivos de base de datos (si usas SQLite)
+db.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos de compilación o backups de editor
+*.bak
+*.swp
+*.swo
